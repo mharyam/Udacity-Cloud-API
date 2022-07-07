@@ -12,7 +12,5 @@ cache: npm
 services:
   - docker
 
-before_install:
-  - echo "Testing Docker Hub credentials"
-  - docker login -u=$DOCKER_USERNAME -p=$DOCKER_PASSWORD
-  - echo "Docker Hub credentials are working"
+script:
+  - docker build -t udagram-api-feed ./udagram-api-feed
