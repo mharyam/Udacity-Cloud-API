@@ -1,9 +1,9 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
+  name: backend-feed
   labels:
     app: backend-feed
-  name: backend-feed-d
 spec:
   replicas: 2
   selector:
@@ -15,8 +15,8 @@ spec:
         app: backend-feed
     spec:
       containers:
-        - image: mharyam/udagram-api-feed:v1
-          name: backend-feed
+        - name: backend-feed
+          image: mharyam/udagram-api-feed:v1
           imagePullPolicy: Always
           resources:
             requests:

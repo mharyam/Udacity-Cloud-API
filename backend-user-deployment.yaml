@@ -1,22 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
+  name: backend-user
   labels:
-    app: backend-api
-  name: backend-api-d
+    app: backend-user
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
-      app: backend-api
+      app: backend-user
   template:
     metadata:
       labels:
-        app: backend-api
+        app: backend-user
     spec:
       containers:
-        - image: mharyam/udagram-api-user:v1
-          name: backend-api
+        - name: backend-user
+          image: mharyam/udagram-api-user:v1
           imagePullPolicy: Always
           resources:
             requests:
